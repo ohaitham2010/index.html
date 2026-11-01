@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e94b16">
+<title>كشري هند | المنيو</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+:root{--orange:#f05a24;--gold:#ffb347;--dark:#171717;--panel:#242424}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--dark);color:#fff;font-family:'Cairo',Tahoma,sans-serif}
+header{background:linear-gradient(125deg,#f05a24,#b72b0d);padding:17px 6%;box-shadow:0 4px 20px #0008}
+.nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-size:27px;font-weight:900;color:white;text-decoration:none}
+.brand span{color:#ffe0ad}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-weight:700}
+.hero{min-height:300px;padding:55px 20px;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 50% 40%,#f36a27 0,#c33310 43%,#181818 100%)}
+.hero h1{font-size:clamp(38px,7vw,65px);margin:8px 0}
+.hero p{color:#fff1e5;font-size:17px}
+main{max-width:1050px;margin:auto;padding:38px 18px 65px}
+.section-title{text-align:center;font-size:30px;margin:0 0 22px}
+.section-title span{color:var(--orange)}
+.category-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 auto 25px}
+.tab-button{border:1px solid #9b4928;background:#292929;color:#fff;padding:10px 19px;border-radius:25px;font:700 15px 'Cairo',sans-serif;cursor:pointer;transition:.2s}
+.tab-button:hover,.tab-button.active{background:var(--orange);border-color:var(--orange);color:white;transform:translateY(-2px)}
+.menu-card{max-width:700px;margin:auto;background:linear-gradient(145deg,#292929,#202020);border:1px solid #65351f;border-radius:20px;padding:22px;box-shadow:0 12px 30px #0004;animation:appear .25s ease}
+.menu-card h3{margin:0 0 14px;color:#ff8a48;font-size:25px;border-bottom:1px solid #5c392b;padding-bottom:12px}
+.menu-item{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px 3px;border-bottom:1px dashed #ffffff24}
+.menu-item:last-child{border:0}
+.price{color:#ffc078;font-weight:900;white-space:nowrap}
+.empty{display:none}
+.note{text-align:center;color:#c9c1bb;font-size:13px;margin-top:18px}
+.contact{background:linear-gradient(120deg,#bd3210,#f05a24);padding:35px 20px;text-align:center}
+.contact h2{font-size:28px;margin:0 0 10px}
+.phones{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:20px auto}
+.phones a{color:white;text-decoration:none;background:#8f260e;padding:10px 16px;border-radius:25px;font-weight:800;border:1px solid #ffb078}
+footer{text-align:center;padding:18px;color:#aaa;background:#111;font-size:13px}
+@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:650px){.nav{flex-direction:column}nav{justify-content:center;gap:12px}.hero{min-height:270px}main{padding:30px 14px 45px}.menu-card{padding:17px}.tab-button{padding:9px 14px;font-size:14px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#">كشري <span>هند</span></a>
+    <nav><a href="#menu">المنيو</a><a href="#contact">تواصل معنا</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <div style="color:#ffe0ad;font-weight:800">أهلاً بيكم في كشري هند</div>
+    <h1>الطعم المصري الأصيل</h1>
+    <p>اختار القسم اللي تحبه وشوف الأصناف والأسعار بسهولة</p>
+  </div>
+</section>
+
+<main id="menu">
+  <h2 class="section-title">منيو <span>كشري هند</span></h2>
+
+  <!-- أزرار التنقل بين الأقسام -->
+  <div class="category-tabs" role="tablist" aria-label="أقسام المنيو">
+    <button class="tab-button active" type="button" data-category="koshary" aria-selected="true">🍲 الكشري</button>
+    <button class="tab-button" type="button" data-category="tawagen" aria-selected="false">🍛 الطواجن</button>
+    <button class="tab-button" type="button" data-category="hawawshi" aria-selected="false">🥙 الحواوشي</button>
+    <button class="tab-button" type="button" data-category="extras" aria-selected="false">🥗 الإضافات</button>
+    <button class="tab-button" type="button" data-category="desserts" aria-selected="false">🍮 الحلو</button>
+  </div>
+
+  <!-- كل قسم يظهر منفردًا عند اختياره -->
+  <section class="menu-card" data-menu="koshary">
+    <h3>🍲 قسم الكشري</h3>
+    <div class="menu-item"><strong>شبح</strong><span class="price">25 جنيه</span></div>
+    <div class="menu-item"><strong>ميديا</strong><span class="price">30 جنيه</span></div>
+    <div class="menu-item"><strong>جامبو</strong><span class="price">35 جنيه</span></div>
+    <div class="menu-item"><strong>هند</strong><span class="price">45 جنيه</span></div>
+    <div class="menu-item"><strong>هند عائلي</strong><span class="price">55 جنيه</span></div>
+    <div class="menu-item"><strong>كشري كبدة</strong><span class="price">60 جنيه</span></div>
+  </section>
+
+  <section class="menu-card" data-menu="tawagen" hidden>
+    <h3>🍛 قسم الطواجن</h3>
+    <div class="menu-item"><strong>طاجن لحمة</strong><span class="price">50 جنيه</span></div>
+    <div class="menu-item"><strong>طاجن فراخ</strong><span class="price">60 جنيه</span></div>
+    <div class="menu-item"><strong>طاجن فراخ موزاريلا</strong><span class="price">75 جنيه</span></div>
+    <div class="menu-item"><strong>طاجن لحمة موزاريلا</strong><span class="price">70 جنيه</span></div>
+    <div class="menu-item"><strong>طاجن لحمة ميكس</strong><span class="price">65 جنيه</span></div>
+    <div class="menu-item"><strong>طاجن فراخ ميكس</strong><span class="price">70 جنيه</span></div>
+    <div class="menu-item"><strong>طاجن اسباجيتي فراخ</strong><span class="price">70 جنيه</span></div>
+    <div class="menu-item"><strong>طاجن اسباجيتي لحمة</strong><span class="price">65 جنيه</span></div>
+    <div class="menu-item"><strong>طاجن اسباجيتي كبدة</strong><span class="price">60 جنيه</span></div>
+  </section>
+
+  <section class="menu-card" data-menu="hawawshi" hidden>
+    <h3>🥙 قسم الحواوشي</h3>
+    <div class="menu-item"><strong>حواوشي لحمة</strong><span class="price">45 جنيه</span></div>
+    <div class="menu-item"><strong>حواوشي لحمة موزاريلا</strong><span class="price">95 جنيه</span></div>
+    <div class="menu-item"><strong>حواوشي فراخ موزاريلا</strong><span class="price">100 جنيه</span></div>
+    <div class="menu-item"><strong>حواوشي فراخ</strong><span class="price">50 جنيه</span></div>
+  </section>
+
+  <section class="menu-card" data-menu="extras" hidden>
+    <h3>🥗 قسم الإضافات</h3>
+    <div class="menu-item"><strong>تقلية</strong><span class="price">10 جنيه</span></div>
+    <div class="menu-item"><strong>حمص</strong><span class="price">10 جنيه</span></div>
+    <div class="menu-item"><strong>عدس</strong><span class="price">10 جنيه</span></div>
+    <div class="menu-item"><strong>صلصة</strong><span class="price">10 جنيه</span></div>
+    <div class="menu-item"><strong>عيش</strong><span class="price">10 جنيه</span></div>
+    <div class="menu-item"><strong>سلطة</strong><span class="price">10 جنيه</span></div>
+    <div class="menu-item"><strong>مياه معدنية</strong><span class="price">10 جنيه</span></div>
+    <div class="menu-item"><strong>بيبسي</strong><span class="price">20 جنيه</span></div>
+    <div class="menu-item"><strong>خيار مخلل</strong><span class="price">10 جنيه</span></div>
+  </section>
+
+  <section class="menu-card" data-menu="desserts" hidden>
+    <h3>🍮 قسم الحلو</h3>
+    <div class="menu-item"><strong>أرز سادة</strong><span class="price">22 جنيه</span></div>
+    <div class="menu-item"><strong>أرز فرن</strong><span class="price">25 جنيه</span></div>
+    <div class="menu-item"><strong>أرز مكسرات</strong><span class="price">30 جنيه</span></div>
+    <div class="menu-item"><strong>أرز كنافة</strong><span class="price">30 جنيه</span></div>
+    <div class="menu-item"><strong>أم علي</strong><span class="price">25 جنيه</span></div>
+    <div class="menu-item"><strong>كاستر جيلي</strong><span class="price">25 جنيه</span></div>
+    <div class="menu-item"><strong>قنبلة شيكولاتة</strong><span class="price">35 جنيه</span></div>
+    <div class="menu-item"><strong>قنبلة مانجا</strong><span class="price">35 جنيه</span></div>
+    <div class="menu-item"><strong>قنبلة كريمة</strong><span class="price">35 جنيه</span></div>
+    <div class="menu-item"><strong>فادج</strong><span class="price">40 جنيه</span></div>
+    <div class="menu-item"><strong>مولتن كيك</strong><span class="price">70 جنيه</span></div>
+    <div class="menu-item"><strong>كريم كراميل</strong><span class="price">25 جنيه</span></div>
+  </section>
+
+  <p class="note">الأسعار بالجنيه المصري — يُرجى التأكد من الأسعار قبل الطلب.</p>
+</main>
+
+<section class="contact" id="contact">
+  <h2>اطلب من كشري هند</h2>
+  <p>📍 ههيا – شارع أحمد عرابي – خلف المحطة</p>
+  <div class="phones">
+    <a href="tel:01001987268">01001987268</a>
+    <a href="tel:01154047825">01154047825</a>
+    <a href="tel:01281055699">01281055699</a>
+    <a href="tel:01150872095">01150872095</a>
+  </div>
+</section>
+<footer>© 2026 كشري هند — جميع الحقوق محفوظة</footer>
+
+<script>
+// JavaScript: إظهار قسم واحد فقط عند الضغط على اسمه
+const categoryButtons = document.querySelectorAll('.tab-button');
+const menuSections = document.querySelectorAll('[data-menu]');
+
+categoryButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const selectedCategory = button.dataset.category;
+
+    // إظهار القسم المختار وإخفاء باقي الأقسام
+    menuSections.forEach((section) => {
+      section.hidden = section.dataset.menu !== selectedCategory;
+    });
+
+    // تحديث شكل الزر النشط
+    categoryButtons.forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle('active', isActive);
+      item.setAttribute('aria-selected', String(isActive));
+    });
+  });
+});
+</script>
+</body>
+</html>
